@@ -1,15 +1,22 @@
 from app import app
+from app import config
+from flask import make_response
+import json
 
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'Miguel'}
     return '''
 <html>
     <head>
-        <title>Home Page - Microblog</title>
+        <title>''' + config.get()['name'] + '''</title>
     </head>
     <body>
-        <h1>Hello, ''' + user['username'] + '''!</h1>
+        <h1>''' + config.get()['name'] + '''</h1>
     </body>
 </html>'''
+@app.route('/config')
+def config_():
+    res = make_response(json.dumps(config.get()))
+    res.mimetype = 'application/json'
+    return res
