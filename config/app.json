@@ -2,5 +2,8 @@
     "name" : "Test App",
     "modules" : [
         "dashboard"
-    ]
+    ],
+    "routes" : {
+        "dashboard" : "dashboard"
+    }
 }
