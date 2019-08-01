@@ -4,6 +4,6 @@
         "dashboard"
     ],
     "routes" : {
-        "dashboard" : "dashboard"
+        "/dashboard" : "dashboard"
     }
 }
