@@ -1,11 +1,11 @@
-from app import app
+from app import app, render_template
 from app import config
 def get(obj):
-    config = config.get()
-    if obj['template']:
+    
+    if obj.get('template'):
         template = obj['template']
     else:
-        template = config.defaults['template']
+        template = config.get()['defaults']['template']
     
     name = obj['name']
     return render_template('''templates/''' + template + '''.html''', name = name)
