@@ -8,4 +8,4 @@ def get(obj):
         template = config.get()['defaults']['template']
     
     name = obj['name']
-    return render_template('''templates/''' + template + '''.html''', name = name)
+    return render_template( template + '''.html''', name = name)

@@ -1,10 +1,13 @@
-from app import app
+from app import app, request, send_from_directory, make_response
 from app import config
 from app import modules
 from app import template
 
 import json
 def static():
+    @app.route('/<path:path>')
+    def send(path):
+        return send_from_directory('assets', path)
     @app.route('/')
     @app.route('/index')
     def index():
