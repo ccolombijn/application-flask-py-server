@@ -2,7 +2,7 @@ from app import app
 from app import config
 from app import modules
 from app import template
-from flask import Flask, session, redirect, url_for, escape, request,make_response
+
 import json
 def static():
     @app.route('/')

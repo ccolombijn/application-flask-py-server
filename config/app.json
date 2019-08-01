@@ -5,5 +5,8 @@
     ],
     "routes" : {
         "/dashboard" : "dashboard"
+    },
+    "defaults" : {
+        "template" : "default"
     }
 }
