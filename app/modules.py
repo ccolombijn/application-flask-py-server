@@ -2,10 +2,12 @@ from app import app
 from app import config
 import importlib.util
 obj = {}
+
 def add(prop,module):
     obj[prop] = module
+    
 def run(prop):
-    obj[prop].default()
+    return obj[prop].default()
 def get():
     modules = config.get()['modules']
     i = 0
