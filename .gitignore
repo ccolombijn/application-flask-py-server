@@ -1,3 +1,4 @@
 .env
 __pycache__/
 app/__pycache__/
+application-flask-py-server.code-workspace

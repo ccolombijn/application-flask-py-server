@@ -1,5 +1,6 @@
 {
     "name" : "Test App",
+    "static" : "assets",
     "modules" : [
         "dashboard"
     ],

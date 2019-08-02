@@ -16,5 +16,5 @@ def get():
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         add(modules[i],module)
-        print(module)
+        #print(module)
         i+=1

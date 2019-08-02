@@ -4,22 +4,22 @@ from app import modules
 from app import template
 
 import json
-def static():
-    @app.route('/<path:path>')
-    def send(path):
-        return send_from_directory('assets', path)
-    @app.route('/')
-    @app.route('/index')
-    def index():
-        return template.get({'name':'Welcome'})
-    @app.route('/config')
-    def config_():
-        res = make_response(json.dumps(config.get()))
-        res.mimetype = 'application/json'
-        return res
+
+@app.route('/<path:path>')
+def send(path):
+    return send_from_directory(config.get()['static'], path)
+@app.route('/')
+@app.route('/index')
+def index():
+    return template.get({'name':'Welcome'})
+@app.route('/config')
+def config_():
+    res = make_response(json.dumps(config.get()))
+    res.mimetype = 'application/json'
+    return res
 
 for attr, value in config.get()['routes'].items():
-    print('''Added route ''' + attr)
+    print('''\x1b[36m[route]\x1b[1m \x1b[37m''' + attr + '''\x1b[0m\x1b[36m : modules'''+ attr+'''.py\x1b[0m''')
     @app.route(attr)
     def some():
         res = modules.run(value)
